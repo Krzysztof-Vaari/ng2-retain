@@ -36,8 +36,8 @@ import { Input, Output, EventEmitter } from '@angular/core';
 }
     `],
     template: `
-    <div
-     class="note-card row shadow-1"
+    <div class="note-card row shadow-1"
+     [ngStyle] = "{'background-color': note.color}"
      (mouseleave) = "toggleCheck()"
      (mouseenter) ="toggleCheck()"
      >

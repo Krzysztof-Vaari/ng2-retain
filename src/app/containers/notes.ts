@@ -28,6 +28,10 @@ import { Component } from '@angular/core';
     `
 })
 
-export class NotesContainer {
-    note = {title: 'To jest notatka', value: 'Zjedz coś smacznego.'}
-};
+export class Notes {
+    note = {
+    title: 'To jest notatka',
+    value: 'Zjedz coś smacznego.', 
+    color: 'lightblue'
+  };
+}
