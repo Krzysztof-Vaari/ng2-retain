@@ -42,9 +42,9 @@ import { Input, Output, EventEmitter } from '@angular/core';
      (mouseenter) ="toggleCheck()"
      >
   <div 
-  class="icon" 
-  (click)="onChecked()"
-  *ngIf = "showCheck"
+    class="icon" 
+    (click)="onChecked()"
+    *ngIf = "showCheck"
   >
     <i class="material-icons">check</i>
   </div>
@@ -59,7 +59,9 @@ import { Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class NoteCard {
+
   @Input() note = {};
+  @Output() checked = new EventEmitter();
   
   showCheck: boolean = false;
 
@@ -67,4 +69,7 @@ export class NoteCard {
     this.showCheck = !this.showCheck;
   }
 
+  onChecked() {
+    this.checked.next(this.note);
+  }
 }
